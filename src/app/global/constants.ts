@@ -1,3 +1,3 @@
 export class Constants {
-	public static AppTitle: string = 'Angular Shipping';
+	public static AppTitle: string = 'RABIT TRANSPORT';
 }
