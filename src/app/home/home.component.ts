@@ -15,4 +15,7 @@ export class HomeComponent implements OnInit {
 		console.log('home component');
 	}
 
+	gotoDelivryReq() {
+		this._router.navigateByUrl('/deliveryReq');
+	}
 }
