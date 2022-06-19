@@ -1,1 +1,29 @@
-<p>tracking-parcels works!</p>
+<div class="componentTopDiv">
+	<div class="container p-5">
+		<h3 class="h3">{{title}}</h3>
+		<div class="bg-white trackingSystemBox">
+			<h5 class="h5 mb-3">送り状番号検索</h5>
+			<div>
+				<button type="button" class="trackingButton buttonDark" (click)="getTrackingInfo()">お問い合わせ開始</button>
+				<button type="button" class="trackingButton buttonLight" (click)="clear()">入力内容をクリア</button>
+			</div>
+			<hr>
+			<table>
+				<tr class="small">
+					<th>送り状番号入力</th>
+					<th>日付</th>
+					<th>配送状況</th>
+				</tr>
+				<tr>
+					<td><input type="text" placeholder="1件目の送り状番号" class="form-control" name="deliveryNum1" [(ngModel)]="traking.trackingNumber"></td>
+					<td>{{traking.deliveryDate}}</td>
+					<td>{{traking.deliveryState}}</td>
+				</tr>
+			</table>
+			<div>{{user.name}}</div>
+		</div>
+		<div class="pt-2 pb-4 d-flex justify-content-center">
+			<button type="button" class="trackingButton buttonLight" (click)="gotoTop()">トップに戻る</button>
+		</div>
+	</div>
+</div>
