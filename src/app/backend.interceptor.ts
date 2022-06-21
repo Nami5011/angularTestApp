@@ -27,9 +27,10 @@ export class BackendInterceptor implements HttpInterceptor {
 					return getUser();
 				case url.startsWith(UrlPath.PrivateApi + '/search/tracking/'):
 					return getTrackingInfo();
+				case url.startsWith(UrlPath.PrivateApi + '/search/trackingList'):
+					return getTrackingInfoList();
 				default:
 					return next.handle(request);
-
 			}
 		}
 
@@ -43,8 +44,13 @@ export class BackendInterceptor implements HttpInterceptor {
 		}
 		function getTrackingInfo() {
 			let urlArray = url.split('/');
-			let trackingInfo = new TrackingInfoStubData(urlArray[urlArray.length - 1]);
-			return ok(trackingInfo.data1());
+			let trackingInfo = new TrackingInfoStubData();
+			return ok(trackingInfo.data1(urlArray[urlArray.length - 1] || ''));
+		}
+		function getTrackingInfoList() {
+			console.log(body.trackingNumberList);
+			let trackingInfo = new TrackingInfoStubData();
+			return ok(trackingInfo.dataList1(body.trackingNumberList));
 		}
 		function error(message: any) {
 			return throwError(() => { error: { message } });

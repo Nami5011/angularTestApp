@@ -13,8 +13,26 @@ export class GetTrackingInfoService {
 	constructor(private _http: HttpClient) { }
 
 	getTrackingInfo(trackingNumber: string): Observable<TrackingInfo> {
+		let url = this.ROOT_URL + '/search/tracking/' + trackingNumber;
 		console.log('getTrackingInfo url:');
-		console.log(this.ROOT_URL + '/search/tracking/' + trackingNumber);
-		return this._http.get<TrackingInfo>(this.ROOT_URL + '/search/tracking/' + trackingNumber);
+		console.log(url);
+
+		return this._http.get<TrackingInfo>(url);
+	}
+
+	getTrackingInfoList(trackingNumber: Array<TrackingInfo>): Observable<any> {
+		let url = this.ROOT_URL + '/search/trackingList';
+		console.log('getTrackingInfoList url:');
+		console.log(url);
+
+		let trackingNumberList: Array<string> = [];
+		trackingNumber.forEach(function (val) {
+			trackingNumberList.push(val.trackingNumber);
+		});
+		let inputData = {
+			trackingNumberList: trackingNumberList
+		}
+
+		return this._http.post<any>(url, inputData);
 	}
 }

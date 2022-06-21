@@ -4,7 +4,7 @@ export interface TrackingInfo {
 	deliveryState: string
 }
 
-export class TrackingInfo implements TrackingInfo {
+export class TrackingInfo {
 	constructor() {
 		this.trackingNumber = '';
 		this.deliveryDate = '';

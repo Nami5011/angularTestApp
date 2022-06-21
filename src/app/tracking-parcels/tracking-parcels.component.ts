@@ -15,15 +15,27 @@ import { UserService } from '../service/user.service';
 
 export class TrackingParcelsComponent implements OnInit {
 	title = Constants.TrackingParcels;
-	traking = new TrackingInfo();
 	user = new User();
-	posts!: Observable<any>;
+	trackingList: TrackingInfo[] = [];
 
 	constructor(private _router: Router, private _userService: UserService, private _trackingService: GetTrackingInfoService) { }
 
 	ngOnInit(): void {
 		console.log('trackingParcels component');
-		this.traking.trackingNumber = sessionStorage.getItem('trackingNumber') || '';
+
+		// 送り状番号検索初期表示
+		for (let tInfo = 0; tInfo < 5; tInfo++) {
+			let traking = new TrackingInfo();
+			this.trackingList.push(traking);
+		}
+		console.log(this.trackingList);
+		// セッションがあれば配送情報を表示
+		let sessionTrackingList: TrackingInfo[] = JSON.parse(sessionStorage.getItem('trackingList') || '[]');
+		if (sessionTrackingList) {
+			sessionTrackingList.forEach((val: TrackingInfo, index: number) => {
+				this.trackingList[index] = val;
+			});
+		}
 	}
 
 	gotoTop() {
@@ -31,7 +43,9 @@ export class TrackingParcelsComponent implements OnInit {
 	}
 
 	clear() {
-		this.traking.trackingNumber = '';
+		this.trackingList.forEach((val: TrackingInfo, index: number) => {
+			this.trackingList[index] = new TrackingInfo();
+		});
 	}
 
 	getUser(): void {
@@ -42,11 +56,14 @@ export class TrackingParcelsComponent implements OnInit {
 			});
 		// .subscribe(user => this.user = user);
 	}
-	getTrackingInfo(): void {
-		this._trackingService.getTrackingInfo(this.traking.trackingNumber)
-			.subscribe((trakingInfo) => {
-				this.traking = trakingInfo;
-				console.log(this.traking);
+
+	getTrackingInfoList(): void {
+		// 配送情報取得一覧API呼び出し
+		this._trackingService.getTrackingInfoList(this.trackingList)
+			.subscribe((response) => {
+				this.trackingList = response.trackingInfoList;
+				console.log('response');
+				console.log(response.trackingInfoList);
 			});
 	}
 }
