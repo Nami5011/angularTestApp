@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Constants } from '../global/constants';
-import { TrackingInfo } from '../interface/tracking-info';
-import { User } from '../interface/user';
-import { GetTrackingInfoService } from '../service/get-tracking-info.service';
-import { UserService } from '../service/user.service';
+import { Constants } from 'src/app/global/constants';
+import { TrackingInfo } from 'src/app/interface/tracking-info';
+import { User } from 'src/app/interface/user';
+import { GetTrackingInfoService } from 'src/app/service/get-tracking-info.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
 	selector: 'app-tracking-parcels',
 	templateUrl: './tracking-parcels.component.html',
 	styleUrls: ['./tracking-parcels.component.css']
 })
-
 export class TrackingParcelsComponent implements OnInit {
 	title = Constants.TrackingParcels;
 	user = new User();

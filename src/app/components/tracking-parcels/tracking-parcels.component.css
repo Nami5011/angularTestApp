@@ -45,3 +45,7 @@ th,
 td {
 	padding: 5px 10px;
 }
+
+.table-th2 {
+	min-width: 130px;
+}

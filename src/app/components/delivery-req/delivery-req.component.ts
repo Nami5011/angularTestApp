@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Constants } from '../global/constants';
+import { Constants } from 'src/app/global/constants';
 
 @Component({
 	selector: 'app-delivery-req',

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Constants } from '../global/constants';
-import { TrackingInfo } from '../interface/tracking-info';
-import { GetTrackingInfoService } from '../service/get-tracking-info.service';
+import { TrackingInfo } from 'src/app/interface/tracking-info';
+import { GetTrackingInfoService } from 'src/app/service/get-tracking-info.service';
 
 @Component({
 	selector: 'app-home',
@@ -36,5 +35,4 @@ export class HomeComponent implements OnInit {
 	gotoDelivryReq() {
 		this._router.navigateByUrl('/deliveryReq');
 	}
-
 }

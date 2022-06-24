@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Constants } from '../global/constants';
+import { Constants } from 'src/app/global/constants';
 
 @Component({
 	selector: 'app-header',
@@ -14,5 +14,4 @@ export class HeaderComponent implements OnInit {
 	ngOnInit(): void {
 		console.log('header component');
 	}
-
 }

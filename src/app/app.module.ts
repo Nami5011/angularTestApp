@@ -5,11 +5,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { DeliveryReqComponent } from './delivery-req/delivery-req.component';
-import { TrackingParcelsComponent } from './tracking-parcels/tracking-parcels.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DeliveryReqComponent } from './components/delivery-req/delivery-req.component';
+import { TrackingParcelsComponent } from './components/tracking-parcels/tracking-parcels.component';
 
 // used to create fake backend
 import { fakeBackendProvider } from './backend.interceptor';
