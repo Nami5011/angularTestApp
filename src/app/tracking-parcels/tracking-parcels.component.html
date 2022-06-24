@@ -10,7 +10,7 @@
 			<table>
 				<tr class="small">
 					<th>送り状番号入力</th>
-					<th>日付</th>
+					<th class="table-th2">日付</th>
 					<th>配送状況</th>
 				</tr>
 				<tr *ngFor="let tInfo of trackingList; index as i;">
@@ -19,9 +19,8 @@
 					<td>{{tInfo.deliveryState}}</td>
 				</tr>
 			</table>
-			<button type="button" class="trackingButton buttonDark" (click)="getUser()">user</button>
-
-			<div>{{user.name}}</div>
+			<!-- <button type="button" class="trackingButton buttonDark" (click)="getUser()">user</button>
+			<div>{{user.name}}</div> -->
 		</div>
 		<div class="pt-2 pb-4 d-flex justify-content-center">
 			<button type="button" class="trackingButton buttonLight" (click)="gotoTop()">トップに戻る</button>
