@@ -10,6 +10,7 @@ body {
 	max-width: 70%;
 }
 
+/* ボタン */
 button.memberLogin {
 	background-color: yellow;
 	border: 0px;
@@ -31,4 +32,58 @@ button {
 	border: 1px solid gray;
 	font-weight: 600;
 	background-color: transparent;
+}
+
+.button-green1 {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: 1px solid lightgrey;
+	color: rgb(0, 154, 139);
+	transition-duration: 0.4s;
+	box-shadow: 0px 2px lightgrey;
+}
+
+.button-green1:hover {
+	background-color: rgb(0, 154, 139);
+	color: white;
+	box-shadow: 0px 0px lightgrey;
+}
+
+/* aタグリンク */
+a {
+	cursor: pointer;
+}
+
+.link {
+	list-style: none;
+}
+
+.link li {
+	position: relative;
+	color: rgb(0, 154, 139);
+	font-size: 90%;
+}
+
+.link li::after {
+	display: block;
+	content: '';
+	position: absolute;
+	top: .5em;
+	left: -1em;
+	width: 6px;
+	height: 6px;
+	border-right: 1.5px solid rgb(0, 154, 139);
+	border-bottom: 1.5px solid rgb(0, 154, 139);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.link a {
+	border-bottom: 1.5px solid rgb(0, 154, 139);
+}
+
+/* padding */
+.padding-5p {
+	padding: 5% 5%;
 }

@@ -11,32 +11,32 @@
 	</div>
 	<div class="row">
 		<div class="col-sm mb-4">
-			<button class="sendButton">
+			<button type="button" class="button-green1 padding-5p">
 				<div>メンバーズ限定</div>
 				<div>前回の条件で集荷を申し込む</div>
 			</button>
 		</div>
 		<div class="col-sm mb-4">
-			<button class="sendButton">
-				<div>国内に送る</div>
+			<button type="button" class="button-green1 padding-5p" (click)="gotoDeliveryInfoMain(domestic)">
+				<div>{{domestic.name}}に送る</div>
 			</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm row">
 			<div class="col mb-4">
-				<button class="sendButton">空港に送る</button>
+				<button type="button" class="button-green1 padding-5p" (click)="gotoDeliveryInfoMain(airport)">{{airport.name}}に送る</button>
 			</div>
 			<div class="col mb-4">
-				<button class="sendButton">ゴルフ場に送る</button>
+				<button type="button" class="button-green1 padding-5p" (click)="gotoDeliveryInfoMain(golf)">{{golf.name}}に送る</button>
 			</div>
 		</div>
 		<div class="col-sm row">
 			<div class="col mb-4">
-				<button class="sendButton">スキー場に送る</button>
+				<button type="button" class="button-green1 padding-5p" (click)="gotoDeliveryInfoMain(skiResort)">{{skiResort.name}}に送る</button>
 			</div>
 			<div class="col mb-4">
-				<button class="sendButton">宿泊施設に送る</button>
+				<button type="button" class="button-green1 padding-5p" (click)="gotoDeliveryInfoMain(accomoddation)">{{accomoddation.name}}に送る</button>
 			</div>
 		</div>
 	</div>

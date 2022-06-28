@@ -1,0 +1,69 @@
+<div class="container my-5">
+	<h2 class="h2">{{shipperPlaceName}}に送る</h2>
+	<h5 class="title">1. 集荷に関する内容を設定する</h5>
+	<hr>
+	<div class="row justify-content-between">
+		<div class="card card1">
+			<h6 class="card-header"><span class="required">必須</span>集荷お伺い先</h6>
+			<div class="card-body">
+				<div>
+					<button type="button" class="button-green1">集荷お伺い先を設定する</button>
+				</div>
+				<div>
+					<h5 class="card-title">Special title treatment</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+				</div>
+			</div>
+		</div>
+		<div class="card card1">
+			<h6 class="card-header"><span class="required">必須</span>ご利用サービス</h6>
+			<div class="card-body">
+				<div>
+					<button type="button" class="button-green1">集荷お伺い先を設定する</button>
+				</div>
+				<div>
+					<h5 class="card-title">Special title treatment</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+				</div>
+			</div>
+		</div>
+		<div class="card card1">
+			<h6 class="card-header"><span class="required">必須</span>集荷お伺い先</h6>
+			<div class="card-body">
+				<div class="d-flex align-items-center justify-content-center">
+					<p class=" card-text">「集荷お伺い先」 「ご利用サービス」 を設定してください</p>
+				</div>
+				<div *ngIf="false">
+					<h5 class="card-title">Special title treatment</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h5 class="title"><span class="required">必須</span>2. 発送に関する内容を設定する</h5>
+	<hr>
+	<div class="card d-flex align-items-center justify-content-center py-3">
+		<p class=" card-text">「集荷お伺い先」 「ご利用サービス」 を設定してください</p>
+	</div>
+	<h5 class="title">3. 集荷・配送に関するオプションを設定する</h5>
+	<div class="card card2">
+		<h6 class="card-header"><span class="option">任意</span>集荷時のご要望、お支払い方法のご要望</h6>
+		<div class="card-body">
+			<div class="d-flex align-items-center justify-content-center">
+				<textarea></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-start">
+		<div class="col-4">
+			<ul class="link">
+				<li>
+					<a (click)="goBack()">集荷申し込みトップに戻る</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-4" style="text-align: center;">
+			<button type="button" class="button-green1">この内容で集荷を申し込む</button>
+		</div>
+	</div>
+</div>

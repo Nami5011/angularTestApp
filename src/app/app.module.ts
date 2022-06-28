@@ -4,20 +4,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+// used to create fake backend
+import { fakeBackendProvider } from './backend.interceptor';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DeliveryReqComponent } from './components/delivery-req/delivery-req.component';
 import { TrackingParcelsComponent } from './components/tracking-parcels/tracking-parcels.component';
+import { DeliveryInfoMainComponent } from './components/delivery-info-main/delivery-info-main.component';
 
-// used to create fake backend
-import { fakeBackendProvider } from './backend.interceptor';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
 	{ path: 'deliveryReq', component: DeliveryReqComponent },
-	{ path: 'trackingParcels', component: TrackingParcelsComponent }
+	{ path: 'trackingParcels', component: TrackingParcelsComponent },
+	{ path: 'deliveryInfoMain', component: DeliveryInfoMainComponent }
 ];
 
 @NgModule({
@@ -27,7 +30,8 @@ const routes: Routes = [
 		HeaderComponent,
 		FooterComponent,
 		DeliveryReqComponent,
-		TrackingParcelsComponent
+		TrackingParcelsComponent,
+		DeliveryInfoMainComponent,
 	],
 	imports: [
 		BrowserModule,
