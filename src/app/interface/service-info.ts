@@ -21,11 +21,11 @@ export class DeliveryType implements DeliveryType {
 	}
 }
 
-export interface PaymentPlace {
+export interface PaymentType {
 	code: string
 	name: string
 }
-export class PaymentPlace implements PaymentPlace {
+export class PaymentType implements PaymentType {
 	constructor() {
 		this.code = '';
 		this.name = '';
@@ -68,7 +68,7 @@ export class PickupTime implements PickupTime {
 export interface ServiceInfo {
 	deliveryPlace: DeliveryPlace
 	deliveryType: DeliveryType
-	paymentType: PaymentPlace
+	paymentType: PaymentType
 	rapping: Array<Rapping>
 	shiyobiDate: string
 	pickupDate: PickupDate
@@ -79,8 +79,7 @@ export class ServiceInfo implements ServiceInfo {
 	constructor() {
 		this.deliveryPlace = new DeliveryPlace();
 		this.deliveryType = new DeliveryType();
-		this.paymentType = new PaymentPlace();
-		this.paymentType = new PaymentPlace();
+		this.paymentType = new PaymentType();
 		this.rapping = [];
 		this.shiyobiDate = '';
 		this.pickupDate = new PickupDate();
