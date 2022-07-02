@@ -14,13 +14,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DeliveryReqComponent } from './components/delivery-req/delivery-req.component';
 import { TrackingParcelsComponent } from './components/tracking-parcels/tracking-parcels.component';
 import { DeliveryInfoMainComponent } from './components/delivery-info-main/delivery-info-main.component';
+import { ShipperInfoComponent } from './components/shipper-info/shipper-info.component';
 
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
 	{ path: 'deliveryReq', component: DeliveryReqComponent },
 	{ path: 'trackingParcels', component: TrackingParcelsComponent },
-	{ path: 'deliveryInfoMain', component: DeliveryInfoMainComponent }
+	{ path: 'deliveryInfoMain', component: DeliveryInfoMainComponent },
+	{ path: 'shipperInfo', component: ShipperInfoComponent }
 ];
 
 @NgModule({
@@ -32,6 +34,7 @@ const routes: Routes = [
 		DeliveryReqComponent,
 		TrackingParcelsComponent,
 		DeliveryInfoMainComponent,
+		ShipperInfoComponent,
 	],
 	imports: [
 		BrowserModule,

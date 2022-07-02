@@ -21,4 +21,8 @@ export class DeliveryInfoMainComponent implements OnInit {
 	goBack() {
 		this._router.navigateByUrl('deliveryReq');
 	}
+
+	gotoShipperInfo() {
+		this._router.navigateByUrl('shipperInfo');
+	}
 }
