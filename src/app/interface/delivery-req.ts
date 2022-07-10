@@ -53,6 +53,7 @@ export class DeliveryReq {
 // 		postalCode:'',
 // 		prefecture:'',
 // 		city:'',
+// 		oaza:'',
 // 		streetName:'',
 // 		buildingName:'',
 // 		companyName:'',
@@ -65,6 +66,7 @@ export class DeliveryReq {
 // 		postalCode:'',
 // 		prefecture:'',
 // 		city:'',
+// 		oaza:'',
 // 		streetName:'',
 // 		buildingName:'',
 // 		facilityname:''

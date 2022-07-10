@@ -64,4 +64,5 @@ export class Constants {
 export class UrlPath {
 	public static JsOnPlaceHolder: string = 'https://jsonplaceholder.typicode.com';
 	public static PrivateApi: string = 'https://api.com';
+	public static zipcloud: string = 'https://zipcloud.ibsnet.co.jp';
 }

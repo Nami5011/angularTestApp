@@ -7,6 +7,7 @@ export interface Shipper {
 	postalCode: string
 	prefecture: string
 	city: string
+	oaza: string
 	streetName: string
 	buildingName: string
 	companyName: string
@@ -24,6 +25,7 @@ export class Shipper implements Shipper {
 		this.postalCode = '';
 		this.prefecture = '';
 		this.city = '';
+		this.oaza = '';
 		this.streetName = '';
 		this.buildingName = '';
 		this.companyName = '';

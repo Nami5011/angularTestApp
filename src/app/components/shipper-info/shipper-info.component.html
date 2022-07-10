@@ -4,45 +4,45 @@
 	<div class="row">
 		<div class="col-md-4 mb-4">
 			<div class="form-title-bold"><span class="required">必須</span>姓</div>
-			<input class="form-control" type="text" placeholder="全角">
+			<input class="form-control" type="text" placeholder="全角" [(ngModel)]="deliveryReq.shipper.lastName">
 		</div>
 		<div class="col-md-4 mb-4">
 			<div class="form-title-bold"><span class="required">必須</span>名</div>
-			<input class="form-control" type="text" placeholder="全角">
+			<input class="form-control" type="text" placeholder="全角" [(ngModel)]="deliveryReq.shipper.firstName">
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4 mb-4">
 			<div class="form-title-bold"><span class="required">必須</span>セイ</div>
-			<input class="form-control" type="text" placeholder="全角">
+			<input class="form-control" type="text" placeholder="全角" [(ngModel)]="deliveryReq.shipper.lastNameKana">
 		</div>
 		<div class="col-md-4 mb-4">
 			<div class="form-title-bold"><span class="required">必須</span>メイ</div>
-			<input class="form-control" type="text" placeholder="全角">
+			<input class="form-control" type="text" placeholder="全角" [(ngModel)]="deliveryReq.shipper.firstNameKana">
 		</div>
 	</div>
 	<h5 class="title">ご住所</h5>
 	<div class="form-title-bold"><span class="required">必須</span>集荷お伺い先</div>
 	<div class="row">
 		<div class="form-check col-md-6 ps-5">
-			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="toHome">
-			<label class="form-check-label" for="inlineRadio1">ご自宅</label>
+			<input class="form-check-input" type="radio" name="pickupPlaceOptions" id="pickupPlace1" value="{{pickupPlaceVal1}}" [(ngModel)]="pickupPlace">
+			<label class="form-check-label" for="pickupPlace1">ご自宅</label>
 		</div>
 		<div class="form-check col-md-6 ps-5">
-			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="toCompany" [(ngModel)]="pickupFlag">
-			<label class="form-check-label" for="inlineRadio2">ご自宅以外</label>
+			<input class="form-check-input" type="radio" name="pickupPlaceOptions" id="pickupPlace2" value="{{pickupPlaceVal2}}" [(ngModel)]="pickupPlace">
+			<label class="form-check-label" for="pickupPlace2">ご自宅以外</label>
 		</div>
 	</div>
 	<p class="message-red">※法人の方はご自宅以外を押してください</p>
 	<div class="form-title-bold"><span class="required">必須</span>郵便番号</div>
 	<div class="row mb-4">
 		<div class="col-md-4">
-			<input class="form-control" type="number" placeholder="半角数字">
+			<input class="form-control" type="tel" placeholder="半角数字" [(ngModel)]="deliveryReq.shipper.postalCode">
 		</div>
-		<div class="col-lg-2">
-			<button type="button" class="button-green1">住所検索</button>
+		<div class="col-md-2">
+			<button type="button" class="button-green1" style="min-width: 100px;" (click)="searchAddress()">住所検索</button>
 		</div>
-		<ul class="col-lg-5 d-flex align-items-center mb-0 ps-4 link">
+		<ul class="col-lg-5 d-flex align-items-center my-1 ps-4 link">
 			<li>
 				<a>郵便番号が分からない方はこちら</a>
 			</li>
@@ -50,26 +50,32 @@
 	</div>
 	<div class="col-md-8 mb-4">
 		<div class="form-title-bold"><span class="required">必須</span>ご住所</div>
-		<input class="form-control" type="text" placeholder="郵便番号からご住所を検索してください" disabled="true">
+		<div *ngIf="deliveryReq.shipper.prefecture === '' && deliveryReq.shipper.city === '' && deliveryReq.shipper.oaza === ''">
+			<input class="form-control" type="text" placeholder="郵便番号からご住所を検索してください" disabled="true">
+		</div>
+		<div *ngIf="deliveryReq.shipper.prefecture !== '' || deliveryReq.shipper.city !== '' || deliveryReq.shipper.oaza !== ''">
+			<div class="form-title-bold">ご住所</div>
+			<p style="font-weight: 550; font-size: smaller;">{{deliveryReq.shipper.prefecture}}{{deliveryReq.shipper.city}}{{deliveryReq.shipper.oaza}}</p>
+		</div>
 	</div>
-	<div class="col-md-8 mb-4" *ngIf="pickupFlag">
+	<div class="col-md-8 mb-4" *ngIf="pickupPlace === pickupPlaceVal2">
 		<div class="form-title-bold"><span class="option">任意</span>法人名</div>
-		<input class="form-control" type="text" placeholder="全角">
+		<input class="form-control" type="text" placeholder="全角" [(ngModel)]="deliveryReq.shipper.companyName">
 	</div>
-	<div class="col-md-8 mb-4" *ngIf="pickupFlag">
+	<div class="col-md-8 mb-4" *ngIf="pickupPlace === pickupPlaceVal2">
 		<div class="form-title-bold"><span class="option">任意</span>部署名</div>
-		<input class="form-control" type="text" placeholder="全角">
+		<input class="form-control" type="text" placeholder="全角" [(ngModel)]="deliveryReq.shipper.division">
 	</div>
 
 	<h5 class="title">ご連絡先</h5>
 	<div class="col-md-4 mb-4">
 		<div class="form-title-bold"><span class="required">必須</span>お電話番号</div>
-		<input class="form-control" type="tel" placeholder="半角数字">
+		<input class="form-control" type="tel" placeholder="半角数字" [(ngModel)]="deliveryReq.shipper.telNumber">
 	</div>
 	<div class="col-md-8 mb-4">
 		<div class="form-title-bold"><span class="required">必須</span>メールアドレス</div>
-		<input class="form-control mb-3" type="email" placeholder="半角">
-		<input class="form-control" type="email" placeholder="確認のため再入力してください">
+		<input class="form-control mb-3" type="email" placeholder="半角" [(ngModel)]="deliveryReq.shipper.emailAddress">
+		<input class="form-control" type="email" placeholder="確認のため再入力してください" [(ngModel)]="emailAddressReinput">
 	</div>
 	<div class="row d-flex align-items-center my-5">
 		<ul class="col-md-4 mb-0 ps-4 link">
@@ -78,7 +84,7 @@
 			</li>
 		</ul>
 		<div class="col-md-4">
-			<button type="button" class="button-green2 py-2">決定する</button>
+			<button type="button" class="button-green2 py-2" (click)="submit()">決定する</button>
 		</div>
 	</div>
 
