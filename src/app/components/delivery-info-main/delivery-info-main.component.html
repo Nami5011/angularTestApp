@@ -3,14 +3,27 @@
 	<h5 class="title">1. 集荷に関する内容を設定する</h5>
 	<div class="row justify-content-between">
 		<div class="card card1">
-			<h6 class="card-header"><span class="required">必須</span>集荷お伺い先</h6>
+			<div class="card-header row justify-content-between">
+				<h6 class="col mb-0 d-flex align-items-center card-header-title"><span class="required">必須</span>集荷お伺い先</h6>
+				<button type="button" class="col editButton button-green1" *ngIf="deliveryReq.shipper.firstName !== ''" (click)="gotoShipperInfo()">編集</button>
+			</div>
 			<div class="card-body">
-				<div>
+				<div *ngIf="deliveryReq.shipper.firstName === ''">
 					<button type="button" class="button-green1" (click)="gotoShipperInfo()">集荷お伺い先を設定する</button>
 				</div>
-				<div>
-					<h5 class="card-title">Special title treatment</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+				<div *ngIf="deliveryReq.shipper.firstName !== ''">
+					<!-- <h5 class="card-title">Special title treatment</h5> -->
+					<!-- 名前 -->
+					<p class="mb-2 card-text">{{deliveryReq.shipper.lastName}}{{deliveryReq.shipper.firstName}}様</p>
+					<!-- 住所 -->
+					<p class="mb-1 card-text text-smaller">〒{{deliveryReq.shipper.postalCode}}</p>
+					<p class="mb-1 card-text">{{deliveryReq.shipper.prefecture}}{{deliveryReq.shipper.city}}{{deliveryReq.shipper.oaza}}
+						{{deliveryReq.shipper.streetName}}{{deliveryReq.shipper.buildingName}}</p>
+					<!-- 電話番号 -->
+					<p class="mb-1 card-text text-smaller">{{deliveryReq.shipper.telNumber}}</p>
+					<!-- メール -->
+					<p class="mb-1 mt-4 card-text">※受付完了メール送信先</p>
+					<p class="mb-1 card-text text-smaller">{{deliveryReq.shipper.emailAddress}}</p>
 				</div>
 			</div>
 		</div>

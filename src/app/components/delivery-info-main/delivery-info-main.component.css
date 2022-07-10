@@ -9,3 +9,13 @@
 .card2 {
 	width: 50%;
 }
+
+.card-header-title {
+	font-weight: 600;
+
+}
+
+/* 編集ボタン */
+.editButton {
+	max-width: 70px;
+}

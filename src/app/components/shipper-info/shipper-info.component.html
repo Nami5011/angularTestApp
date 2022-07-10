@@ -42,11 +42,11 @@
 		<div class="col-md-2">
 			<button type="button" class="button-green1" style="min-width: 100px;" (click)="searchAddress()">住所検索</button>
 		</div>
-		<ul class="col-lg-5 d-flex align-items-center my-1 ps-4 link">
+		<!-- <ul class="col-lg-5 d-flex align-items-center my-1 ps-4 link">
 			<li>
 				<a>郵便番号が分からない方はこちら</a>
 			</li>
-		</ul>
+		</ul> -->
 	</div>
 	<div class="col-md-8 mb-4">
 		<div class="form-title-bold"><span class="required">必須</span>ご住所</div>
@@ -54,8 +54,12 @@
 			<input class="form-control" type="text" placeholder="郵便番号からご住所を検索してください" disabled="true">
 		</div>
 		<div *ngIf="deliveryReq.shipper.prefecture !== '' || deliveryReq.shipper.city !== '' || deliveryReq.shipper.oaza !== ''">
-			<div class="form-title-bold">ご住所</div>
-			<p style="font-weight: 550; font-size: smaller;">{{deliveryReq.shipper.prefecture}}{{deliveryReq.shipper.city}}{{deliveryReq.shipper.oaza}}</p>
+			<div class="form-title-bold mt-3">ご住所</div>
+			<p class="ms-2 mb-0" style="font-weight: 550; font-size: smaller;">{{deliveryReq.shipper.prefecture}}{{deliveryReq.shipper.city}}{{deliveryReq.shipper.oaza}}</p>
+			<div class="form-title-bold mt-3">丁目・番地</div>
+			<input class="form-control" type="text" placeholder="全角" [(ngModel)]="deliveryReq.shipper.streetName">
+			<div class="form-title-bold mt-3">建物・部屋番号</div>
+			<input class="form-control" type="text" placeholder="全角" [(ngModel)]="deliveryReq.shipper.buildingName">
 		</div>
 	</div>
 	<div class="col-md-8 mb-4" *ngIf="pickupPlace === pickupPlaceVal2">

@@ -37,7 +37,7 @@ button {
 .button-green1 {
 	width: 100%;
 	height: 100%;
-	background-color: transparent;
+	background-color: white;
 	border: 1px solid lightgrey;
 	color: rgb(0, 154, 139);
 	transition-duration: 0.4s;
@@ -102,6 +102,11 @@ a {
 /* padding */
 .padding-5p {
 	padding: 5% 5%;
+}
+
+/* 文字サイズ */
+.text-smaller {
+	font-size: 90%;
 }
 
 /* タイトル */
