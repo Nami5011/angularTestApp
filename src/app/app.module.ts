@@ -16,7 +16,6 @@ import { TrackingParcelsComponent } from './components/tracking-parcels/tracking
 import { DeliveryInfoMainComponent } from './components/delivery-info-main/delivery-info-main.component';
 import { ShipperInfoComponent } from './components/shipper-info/shipper-info.component';
 
-
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
 	{ path: 'deliveryReq', component: DeliveryReqComponent },
@@ -38,7 +37,9 @@ const routes: Routes = [
 	],
 	imports: [
 		BrowserModule,
-		RouterModule.forRoot(routes),
+		RouterModule.forRoot(routes, {
+			scrollPositionRestoration: 'top'
+		}),
 		FormsModule,
 		ReactiveFormsModule,
 		HttpClientModule
