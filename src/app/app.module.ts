@@ -15,6 +15,7 @@ import { DeliveryReqComponent } from './components/delivery-req/delivery-req.com
 import { TrackingParcelsComponent } from './components/tracking-parcels/tracking-parcels.component';
 import { DeliveryInfoMainComponent } from './components/delivery-info-main/delivery-info-main.component';
 import { ShipperInfoComponent } from './components/shipper-info/shipper-info.component';
+import { DeliveryServiceInfoComponent } from './components/delivery-service-info/delivery-service-info.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
 		TrackingParcelsComponent,
 		DeliveryInfoMainComponent,
 		ShipperInfoComponent,
+		DeliveryServiceInfoComponent,
 	],
 	imports: [
 		BrowserModule,
