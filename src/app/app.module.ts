@@ -22,7 +22,8 @@ const routes: Routes = [
 	{ path: 'deliveryReq', component: DeliveryReqComponent },
 	{ path: 'trackingParcels', component: TrackingParcelsComponent },
 	{ path: 'deliveryInfoMain', component: DeliveryInfoMainComponent },
-	{ path: 'shipperInfo', component: ShipperInfoComponent }
+	{ path: 'shipperInfo', component: ShipperInfoComponent },
+	{ path: 'deliveryServiceInfo', component: DeliveryServiceInfoComponent }
 ];
 
 @NgModule({

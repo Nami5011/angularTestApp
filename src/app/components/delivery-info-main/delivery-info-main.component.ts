@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Constants } from 'src/app/global/constants';
 import { DeliveryReq } from 'src/app/interface/delivery-req';
+import { FunctionsService } from 'src/app/global/functions.service';
 
 @Component({
 	selector: 'app-delivery-info-main',
@@ -11,6 +12,7 @@ import { DeliveryReq } from 'src/app/interface/delivery-req';
 export class DeliveryInfoMainComponent implements OnInit {
 	deliveryReq: DeliveryReq = JSON.parse(sessionStorage.getItem('deliveryReq') || String(new DeliveryReq()));
 	shipperPlaceName = this.deliveryReq.serviceInfo.deliveryPlace.name;
+	isEmpty = new FunctionsService().isEmpty;
 
 	constructor(private _router: Router) { }
 
@@ -24,5 +26,9 @@ export class DeliveryInfoMainComponent implements OnInit {
 
 	gotoShipperInfo() {
 		this._router.navigateByUrl('shipperInfo');
+	}
+
+	gotoServiceInfo() {
+		this._router.navigateByUrl('deliveryServiceInfo');
 	}
 }

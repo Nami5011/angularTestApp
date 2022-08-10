@@ -1,5 +1,7 @@
 .card-header {
 	font-weight: 600;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 .card1 {
@@ -12,10 +14,14 @@
 
 .card-header-title {
 	font-weight: 600;
-
+	font-size: 90%;
+	padding: 0%;
 }
 
 /* 編集ボタン */
 .editButton {
 	max-width: 70px;
+	height: 35px;
+	font-weight: bold;
+	font-size: 87%;
 }

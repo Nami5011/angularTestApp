@@ -2,16 +2,17 @@
 	<h2 class="h2">{{shipperPlaceName}}に送る</h2>
 	<h5 class="title">1. 集荷に関する内容を設定する</h5>
 	<div class="row justify-content-between">
+		<!-- 集荷お伺い先 -->
 		<div class="card card1">
 			<div class="card-header row justify-content-between">
 				<h6 class="col mb-0 d-flex align-items-center card-header-title"><span class="required">必須</span>集荷お伺い先</h6>
-				<button type="button" class="col editButton button-green1" *ngIf="deliveryReq.shipper.firstName !== ''" (click)="gotoShipperInfo()">編集</button>
+				<button type="button" class="col editButton button-green1" *ngIf="!isEmpty(deliveryReq.shipper.firstName)" (click)="gotoShipperInfo()">編集</button>
 			</div>
 			<div class="card-body">
-				<div *ngIf="deliveryReq.shipper.firstName === ''">
+				<div *ngIf="isEmpty(deliveryReq.shipper.firstName)">
 					<button type="button" class="button-green1" (click)="gotoShipperInfo()">集荷お伺い先を設定する</button>
 				</div>
-				<div *ngIf="deliveryReq.shipper.firstName !== ''">
+				<div *ngIf="!isEmpty(deliveryReq.shipper.firstName)">
 					<!-- <h5 class="card-title">Special title treatment</h5> -->
 					<!-- 名前 -->
 					<p class="mb-2 card-text">{{deliveryReq.shipper.lastName}}{{deliveryReq.shipper.firstName}}様</p>
@@ -27,7 +28,23 @@
 				</div>
 			</div>
 		</div>
+		<!-- ご利用サービス -->
 		<div class="card card1">
+			<div class="card-header row justify-content-between">
+				<h6 class="col mb-0 d-flex align-items-center card-header-title"><span class="required">必須</span>ご利用サービス</h6>
+				<button type="button" class="col editButton button-green1" *ngIf="!isEmpty(deliveryReq.serviceInfo.deliveryType.name)" (click)="gotoServiceInfo()">編集</button>
+			</div>
+			<div class="card-body">
+				<div *ngIf="isEmpty(deliveryReq.serviceInfo.deliveryType.name)">
+					<button type="button" class="button-green1" (click)="gotoServiceInfo()">ご利用サービスを設定する</button>
+				</div>
+				<div *ngIf="!isEmpty(deliveryReq.serviceInfo.deliveryType.name)">
+					<!-- 宅急便種類 -->
+					<p class="mb-2 card-text">{{deliveryReq.serviceInfo.deliveryType.name}}({{deliveryReq.serviceInfo.paymentType.name}})</p>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="card card1">
 			<h6 class="card-header"><span class="required">必須</span>ご利用サービス</h6>
 			<div class="card-body">
 				<div>
@@ -38,7 +55,7 @@
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="card card1">
 			<h6 class="card-header"><span class="required">必須</span>集荷希望日時</h6>
 			<div class="card-body">
